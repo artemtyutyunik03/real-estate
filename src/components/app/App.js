@@ -1,15 +1,14 @@
-import React, {useEffect} from 'react';
-import {ChakraProvider, Box, theme, Container, Tabs, TabList, Tab, TabPanels, TabPanel} from '@chakra-ui/react';
+import React from 'react';
+import {ChakraProvider, theme, Tabs, TabList, Tab, TabPanels, TabPanel} from '@chakra-ui/react';
 import Header from "../header";
 import ForRentPage from "../pages/forRentPage";
 import ForBuyPage from "../pages/forBuyPage";
-import {getAllForRentProperties} from "../../service/service";
-
+import styles from './app.module.css'
 function App() {
 
   return (
     <ChakraProvider theme={theme}>
-      <Container maxW='1250px' >
+      <div className={styles.container}>
         <Header/>
           <Tabs size='md' variant='enclosed'>
               <TabList key={'tab-list'}>
@@ -25,7 +24,7 @@ function App() {
                   </TabPanel>
               </TabPanels>
           </Tabs>
-      </Container>
+      </div>
     </ChakraProvider>
   );
 }
